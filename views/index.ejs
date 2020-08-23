@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <div class="container u-full-width">
+      <br /><br />
+      <form class="u-full-width" action="/" method="POST">
+        <label for="inputURL"></label>
+        <input
+          type="url"
+          name="inputURL"
+          id="inputURL"
+          required
+          placeholder="ex: https://somesite.com"
+        />
+        <input type="submit" value="Shorten" />
+      </form>
+      <% if (JSON.stringify(result) !== '{}') {%>
+      <br /><br />
+      <div id="generatedUrl">
+        <h5>Shortened URL for <%= result.url %> is:</h5>
+        <!--Only works if port is set to 3000 for localhost.-->
+        <p id="shortUrl">http://localhost:3000/<%=result.shortenedURL%></p>
+        <button id="copyUrlBtn">
+          <span class="material-icons">
+            content_copy
+          </span>
+        </button>
+      </div>
+      <% } else { %>
+      <p>Your short URL will be loaded here.</p>
+      <% } %>
+      <br /><br />
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

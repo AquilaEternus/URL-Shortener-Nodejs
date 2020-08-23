@@ -1,0 +1,32 @@
+{
+  "name": "url-shortener-nodejs",
+  "version": "1.0.0",
+  "description": "\"\"Web app that shorten URLs submitted by users.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AquilaEternus/URL-Shortener-Nodejs.git"
+  },
+  "author": "AquilaEternus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AquilaEternus/URL-Shortener-Nodejs/issues"
+  },
+  "homepage": "https://github.com/AquilaEternus/URL-Shortener-Nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "helmet": "^4.1.0",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.10.0",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

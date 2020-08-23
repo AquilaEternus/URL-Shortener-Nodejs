@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+#inputURL {
+  width: 60%;
+}
+
+#headContent {
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+#headContent a {
+  text-decoration: none;
+  color: white;
+}
+
+#generatedUrl {
+  text-align: left;
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid grey;
+  padding: 20px 20px 20px 20px;
+}
+
+#tmpInput {
+  display: none;
+}
+
+#textCopiedNote {
+  float: right;
+}
+
+#copyUrlBtn {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 50%;
+}
+
+#footerContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: grey;
+  margin-bottom: 2vh;
+}

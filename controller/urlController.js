@@ -1,5 +1,5 @@
-const shortid = require("shortid");
-const ShortURL = require("../models/shorturl");
+import { nanoid } from 'nanoid';
+import ShortURL from '../models/shorturl';
 
 /* Renders index.ejs to the user at route "/" */
 const url_get = async (req, res) => {
@@ -11,11 +11,15 @@ const url_get = async (req, res) => {
 const url_post = async (req, res) => {
   const newShortURL = new ShortURL({
     url: req.body.inputURL,
-    shortenedURL: shortid.generate(),
+    shortenedURL: nanoid(8),
   });
-  newShortURL.save().then((result) => {
-    res.render("index", { title: "URL-Shortener", result });
-  });
+  newShortURL.save()
+    .then((result) => {
+      res.status(200).render("index", { title: "URL-Shortener", result });
+    })
+    .catch((err) => {
+      res.status(500).render("500", { title: "Internal Error" });
+    })
 };
 
 /* Finds a short url in the database matching the param :shortURL in 

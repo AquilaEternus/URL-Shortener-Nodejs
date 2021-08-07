@@ -1,13 +1,8 @@
-function mainHandler() {
-  document.querySelector("#copyUrlBtn").addEventListener("click", copyShortUrl);
-}
-mainHandler();
-
 /* Handles the click event of the button, #copyUrlBtn. If browser doesn't 
 support navigator.clipboard, then create temporary a input element that holds
 the short url and copy that to the clipboard. Else, write the short url
 text directly to the clipboard using navigator.clipboard.writeText. */
-function copyShortUrl(e) {
+const copyShortUrl = (e) => {
   const shortUrl = document.querySelector("#shortUrl").textContent;
   if (!navigator.clipboard) {
     const tmpInput = document.createElement("input");
@@ -33,7 +28,7 @@ function copyShortUrl(e) {
 
 /* Generates a P element when the button, #copyUrlBtn, is clicked that
 notifies the user if the short url was copied to the clipboard. */
-function notifyTextCopied(message) {
+const notifyTextCopied = (message) => {
   if (!document.querySelector("#textCopiedNote")) {
     const textCopiedNote = document.createElement("p");
     textCopiedNote.id = "textCopiedNote";
@@ -41,3 +36,7 @@ function notifyTextCopied(message) {
     document.querySelector("#generatedUrl").appendChild(textCopiedNote);
   }
 }
+
+(() => {
+  document.querySelector("#copyUrlBtn").addEventListener("click", copyShortUrl);
+})();

@@ -21,7 +21,7 @@
       <div id="generatedUrl">
         <h5>Shortened URL for <%= result.url %> is:</h5>
         <!--Only works if port is set to 3000 for localhost.-->
-        <p id="shortUrl">http://localhost:3000/<%=result.shortenedURL%></p>
+        <p id="shortUrl"><%=process.env.HOST_URL%><%=result.shortenedURL%></p>
         <button id="copyUrlBtn">
           <span class="material-icons">
             content_copy
